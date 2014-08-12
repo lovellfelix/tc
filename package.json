@@ -1,0 +1,14 @@
+{
+  "name": "Time_Capsule",
+  "description": "Demo application for dpd-fileupload",
+  "version": "0.0.1",
+  "author": "Lovell Felix <hello@lovellfelix.com",
+  "dependencies": {
+  	"deployd": ">= 0",
+    "dpd-fileupload": "~0.0.10",
+    "dpd-passport": "~0.1.1",
+    "dpd-jobs": "~0.0.11",
+    "dpd-email": "~0.0.3"
+
+  }
+}
