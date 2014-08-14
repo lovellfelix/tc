@@ -13,7 +13,7 @@ pids
 build/Release
 
 node_modules
-bower_components
+public/components
 
 # Users Environment Variables
 .lock-wscript
