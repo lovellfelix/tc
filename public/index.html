@@ -12,9 +12,7 @@
     <ng-include src="'partials/header.html'"></ng-include>
     <div class="feed" ng-controller="FeedCtrl">
       <div class="span8">
-        <p ng-cloak ng-hide="currentUser" class="muted">
-          Log in to post a message
-        </p>
+       
         <form class="well" ng-cloak ng-show="currentUser">
           <textarea class="input-xxlarge" placeholder="What's up?" ng-model="newPost"></textarea>
           <div>
