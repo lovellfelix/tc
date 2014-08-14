@@ -20,17 +20,49 @@
         
       </ul>
     
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+      <ul class="nav navbar-nav navbar-right" ng-controller="LoginCtrl">
+        
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+          <a ng-cloak ng-show="currentUser" href="#" class="dropdown-toggle" data-toggle="dropdown">@{{currentUser.username}}! <span class="caret"></span></a>
+
+        <ul ng-cloak ng-show="currentUser" class="dropdown-menu" role="menu">
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Settings</a></li>
             <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href ng-click="logout()">Logout</a></li>
           </ul>
+
+          <a ng-cloak ng-hide="currentUser" href="#" class="dropdown-toggle" data-toggle="dropdown">Have an account? Sign in<span class="caret"></span></a>
+
+
+
+
+
+          <div ng-cloak ng-hide="currentUser" class="dropdown-menu dropdown-form" id="signin-dropdown" role="dialog" aria-hidden="false" aria-labelledby="signin-form-legend"><div class="js-first-tabstop" tabindex="0"></div> <div class="dropdown-caret right"> <span class="caret-outer"></span> <span class="caret-inner"></span> </div> <div class="signin-dialog-body"> <form action="https://twitter.com/sessions" class="t1-form js-signin signin" method="post">
+  <fieldset>
+    <legend id="signin-form-legend" class="visuallyhidden">Sign In</legend>
+    <div class="textbox">
+  <label class="t1-label username js-username">
+      <span>Username or email</span>
+    <input class="js-username-field email-input js-initial-focus" type="text" name="session[username_or_email]" autocomplete="on">
+  </label>
+  <label class="t1-label password js-password">
+    <span>Password</span>
+    <input class="js-password-field" type="password" value="" name="session[password]">
+  </label>
+</div>
+
+    <div class="subchck">
+  <button type="submit" class="btn submit">Sign in</button>
+
+</div>
+</fieldset>
+
+</form>
+ 
+
+
+
         </li>
       </ul>
       </div>
