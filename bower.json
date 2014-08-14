@@ -1,0 +1,21 @@
+{
+  "name": "TimeCapsule Web",
+  "version": "0.0.1-alpha",
+  "authors": [
+    "Lovell Felix <lovell.felix@gmail.com>"
+  ],
+  "description": "Preserve memories and share it with a selected few or the rest of the world",
+  "license": "MIT",
+  "homepage": "http://lovellfelix.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.22"
+  }
+}
