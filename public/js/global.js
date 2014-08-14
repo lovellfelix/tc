@@ -1,4 +1,4 @@
-var app = angular.module('microblogApp', []);
+var app = angular.module('tcApp', []);
 
 app.factory('Feed', function($rootScope) {
   var PAGE_SIZE = 5;
