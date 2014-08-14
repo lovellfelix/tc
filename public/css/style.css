@@ -14,3 +14,5 @@
 .feed .load-more-btn {
   padding: 10px 0;
 }
+
+[ng\:cloak], [ng-cloak], .ng-cloak { display: none; }
