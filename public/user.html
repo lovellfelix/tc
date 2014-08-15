@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html ng-app="microblogApp">
+<html ng-app="tcApp">
 <head>
   <title>Deployd Microblogging</title>
-  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.css" />
   <link rel="stylesheet" href="css/style.css" />
   <!-- Angular does some things with CSS so it's good to load this in the head -->
-  <script type="text/javascript" src="/js/lib/angular.js"></script>
+  <script type="text/javascript" src="components/angular/angular.js"></script>
 </head>
+<ng-include src="'partials/nav.html'" ng-cloak></ng-include>
 <body>
   <div class="container">
-    <ng-include src="'partials/header.html'"></ng-include>
 
     <div class="feed" ng-controller="UserFeedCtrl">
       <div class="span8">
