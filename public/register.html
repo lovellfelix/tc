@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html ng-app="microblogApp">
+<html ng-app="tcApp">
 <head>
-  <title>Deployd Microblogging</title>
-  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <title>TimeCapsule </title>
+  <link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.css" />
   <link rel="stylesheet" href="css/style.css" />
-  <!-- Angular does some things with CSS so it's good to load this in the head -->
-  <script type="text/javascript" src="/js/lib/angular.js"></script>
+  <script type="text/javascript" src="components/angular/angular.js"></script>
 </head>
+<ng-include src="'partials/nav.html'" ng-cloak></ng-include>
 <body>
   <div class="container">
     <h1>Deployd Microblogging</h1>
@@ -25,9 +25,10 @@
     </form>    
   </div>
 
-  <script type="text/javascript" src="/js/lib/jquery.js"></script>
+  <script type="text/javascript" src="components/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="components/bootstrap/dist/js/bootstrap.js"></script>
   <script type="text/javascript" src="/dpd.js"></script>
   <script type="text/javascript" src="/js/global.js"></script>
-  <script type="text/javascript" src="/js/register.js"></script>
+  <script type="text/javascript" src="/js/index.js"></script>
 </body>
 </html>
