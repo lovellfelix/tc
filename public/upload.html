@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deployd - file upload module - Demo</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="/dpd.js"></script>
+    <script type="text/javascript" src="js/upload.js"></script>
+</head>
+<body>
+
+    <div class="container">
+      <div class="header">
+
+  </div>
+
+  <hr/>
+  <div class="row">
+      <div class="well">
+        <h4>Upload some files</h4>
+        <p class="lead">
+            <form role="form">
+                <div class="row">
+                    <div class="form-group col-xs-2">
+                        <label for="subdir">Subdir (optional)</label>
+                        <select id="subdir" class="form-control">
+                            <option>images</option>
+                            <option>music</option>
+                            <option>video</option>
+                            <option>document</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-xs-7">
+                        <label for="comments">Comments (optional)</label>
+                        <input type="text" class="form-control" id="comments" placeholder="Enter comment">
+                    </div>
+                    <div class="form-group col-xs-1">
+                        <label for="unique">Unique Filename</label>
+                        <input type="checkbox" class="form-control" id="uniqueFilename">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="exampleInputFile">File input</label>
+                        <input type="file" id="exampleInputFile" onchange="setFiles(this)" multiple>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-success" onClick="uploadFiles()">Submit</button>
+            </form>
+        </p>
+    </div>
+    <div class="alert alert-success"></div>
+    <div class="row marketing">
+        <table class="table table-condensed table-striped" id="result">
+            <tr>
+                <th>Filename</th>
+                <th>Sub Directory</th>
+                <th>Comments</th>
+                <th>Size</th>
+                <th>Original Filename</th>
+                <th>Creation Date</th>
+                <th>Actions</th>
+            </tr>
+        </table>
+    </div>
+</div>
+<hr />
+<div class="footer">
+    <p><span class="glyphicon glyphicon-fire"></span> Nicolas Ritouet</p>
+</div>
+</body>
+</html>
