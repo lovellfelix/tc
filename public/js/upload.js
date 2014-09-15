@@ -14,7 +14,8 @@ var uploadFiles = function() {
     var comments = $('#comments').val();
     var uniqueFilename = $('#uniqueFilename').prop('checked');
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', '/uploads?subdir=' + subdir + '&comments=' + comments + '&uniqueFilename=' + uniqueFilename);
+    //xhr.open('POST', '/uploads?subdir=' + subdir + '&comments=' + comments + '&uniqueFilename=' + uniqueFilename);
+    xhr.open('POST', '/posts?subdir=' + subdir + '&comments=' + comments + '&uniqueFilename=' + uniqueFilename);
     xhr.onload = function() {
         var response = JSON.parse(this.responseText);
         console.log(response);
@@ -52,15 +53,29 @@ var setFiles = function(element) {
     }
 };
 
-dpd.uploads.get(function(data, statusCode, headers, config) {
+//dpd.uploads.get(function(data, statusCode, headers, config) {
+//    for(var index in data) {
+//        appendUploadedFileToTable(data[index]);
+//    }
+//});
+
+dpd.posts.get(function(data, statusCode, headers, config) {
     for(var index in data) {
         appendUploadedFileToTable(data[index]);
     }
 });
 
+//var deleteFile = function(element, id) {
+//    $(element).closest('tr').remove();
+//    dpd.uploads.del(id, function(data, status) {
+//        $('.alert-success').show();
+//        $('.alert-success').append("File removed!");
+//    })
+//}
+
 var deleteFile = function(element, id) {
     $(element).closest('tr').remove();
-    dpd.uploads.del(id, function(data, status) {
+    dpd.posts.del(id, function(data, status) {
         $('.alert-success').show();
         $('.alert-success').append("File removed!");
     })

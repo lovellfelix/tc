@@ -1,45 +1,62 @@
 {
-	"type": "Collection",
-	"properties": {
-		"message": {
-			"name": "message",
-			"type": "string",
-			"typeLabel": "string",
-			"required": false,
-			"id": "message",
-			"order": 0
-		},
-		"creator": {
-			"name": "creator",
-			"type": "string",
-			"typeLabel": "string",
-			"required": false,
-			"id": "creator",
-			"order": 1
-		},
-		"creatorName": {
-			"name": "creatorName",
-			"type": "string",
-			"typeLabel": "string",
-			"required": false,
-			"id": "creatorName",
-			"order": 2
-		},
-		"mentions": {
-			"name": "mentions",
-			"type": "array",
-			"typeLabel": "array",
-			"required": false,
-			"id": "mentions",
-			"order": 3
-		},
-		"postedTime": {
-			"name": "postedTime",
-			"type": "number",
-			"typeLabel": "number",
-			"required": false,
-			"id": "postedTime",
-			"order": 4
-		}
-	}
+    "type": "Fileupload",
+    "directory": "s3",
+    "properties": {
+        "subdir": {
+            "name": "subdir",
+            "type": "string",
+            "typeLabel": "string",
+            "required": false,
+            "id": "subdir",
+            "order": 0
+        },
+        "comments": {
+            "name": "comments",
+            "type": "string",
+            "typeLabel": "string",
+            "required": false,
+            "id": "comments",
+            "order": 1
+        },
+        "filename": {
+            "name": "filename",
+            "type": "string",
+            "typeLabel": "string",
+            "required": false,
+            "id": "filename",
+            "order": 2
+        },
+        "originalFilename": {
+            "name": "originalFilename",
+            "type": "string",
+            "typeLabel": "string",
+            "required": false,
+            "id": "originalFilename",
+            "order": 3
+        },
+        "filesize": {
+            "name": "filesize",
+            "type": "number",
+            "typeLabel": "number",
+            "required": false,
+            "id": "filesize",
+            "order": 4
+        },
+        "creationDate": {
+            "name": "creationDate",
+            "type": "number",
+            "typeLabel": "number",
+            "required": false,
+            "id": "creationDate",
+            "order": 5
+        },
+        "mimeType": {
+            "name": "mimeType",
+            "type": "string",
+            "typeLabel": "string",
+            "required": false,
+            "id": "mimeType",
+            "order": 6
+        }
+    }
 }
