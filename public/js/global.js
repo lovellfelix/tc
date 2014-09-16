@@ -1,4 +1,4 @@
-var app = angular.module('tcApp', []);
+var app = angular.module('tcApp', ['yaru22.angular-timeago']);
 
 app.factory('Feed', function($rootScope) {
   var PAGE_SIZE = 5;

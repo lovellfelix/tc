@@ -1,7 +1,19 @@
 <div class="feed-list">
   <div class="post" ng-repeat="post in feed.posts">
-    <div class="author"><a ng-href="/user.html?user={{post.creatorName}}">@{{post.creatorName}}</a></div>
-    <div dpd-message-for="post"></div>
+    <div class="author">
+        {{post.creatorName}} <a ng-href="/user.html?user={{post.creatorName}}">@{{post.creatorName}}</a>
+        {{post.postedTime |timeAgo }}
+    </div>
+      <div dpd-message-for="post"></div>
+
+      <div class="row">
+          <div class="col-xs-8 col-md-6">
+              <a href="/s3/{{post.subdir}}/{{post.filename}}" class="thumbnail">
+                  <img src="/s3/{{post.subdir}}/{{post.filename}}" alt="...">
+              </a>
+          </div>
+      </div>
+
   </div>
 </div>
   <button class="btn btn-link load-more-btn" ng-show="feed.moreToLoad" ng-click="feed.loadPosts()">Show more</button>

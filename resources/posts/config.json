@@ -1,62 +1,49 @@
 {
     "type": "Fileupload",
     "directory": "s3",
+    "path": "/posts",
+    "typeLabel": "Collection",
+
     "properties": {
-        "subdir": {
-            "name": "subdir",
+        "message": {
+            "name": "message",
             "type": "string",
             "typeLabel": "string",
             "required": false,
-            "id": "subdir",
+            "id": "message",
             "order": 0
         },
-        "comments": {
-            "name": "comments",
+        "creator": {
+            "name": "creator",
             "type": "string",
             "typeLabel": "string",
             "required": false,
-            "id": "comments",
+            "id": "creator",
             "order": 1
         },
-        "filename": {
-            "name": "filename",
+        "creatorName": {
+            "name": "creatorName",
             "type": "string",
             "typeLabel": "string",
             "required": false,
-            "id": "filename",
+            "id": "creatorName",
             "order": 2
         },
-        "originalFilename": {
-            "name": "originalFilename",
-            "type": "string",
-            "typeLabel": "string",
+        "mentions": {
+            "name": "mentions",
+            "type": "array",
+            "typeLabel": "array",
             "required": false,
-            "id": "originalFilename",
+            "id": "mentions",
             "order": 3
         },
-        "filesize": {
-            "name": "filesize",
+        "postedTime": {
+            "name": "postedTime",
             "type": "number",
             "typeLabel": "number",
             "required": false,
-            "id": "filesize",
+            "id": "postedTime",
             "order": 4
-        },
-        "creationDate": {
-            "name": "creationDate",
-            "type": "number",
-            "typeLabel": "number",
-            "required": false,
-            "id": "creationDate",
-            "order": 5
-        },
-        "mimeType": {
-            "name": "mimeType",
-            "type": "string",
-            "typeLabel": "string",
-            "required": false,
-            "id": "mimeType",
-            "order": 6
         }
     }
 }
