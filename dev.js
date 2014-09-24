@@ -4,7 +4,7 @@ var server = deployd({
   port: process.env.PORT || 5000,
   env: 'production',
   db: {
-    host: '162.247.154.108.',
+    host: '127.0.0.1',
     port: 27017,
     name: 'timecapsule',
     credentials: {
