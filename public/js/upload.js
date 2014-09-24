@@ -11,10 +11,14 @@ var uploadFiles = function() {
     }
 
     var subdir = $('#subdir').val();
-    var comments = $('#comments').val();
-    var uniqueFilename = $('#uniqueFilename').prop('checked');
+    var creator = "36c1875808f71958";
+    var creatorName = "lovell";
+    var message = $('#message').val();
+    var uniqueFilename = true;
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', '/uploads?subdir=' + subdir + '&comments=' + comments + '&uniqueFilename=' + uniqueFilename);
+    //xhr.open('POST', '/uploads?subdir=' + subdir + '&comments=' + comments + '&uniqueFilename=' + uniqueFilename);
+    xhr.open('POST', '/posts?subdir=' + subdir + '&message=' + message + '&uniqueFilename=' + uniqueFilename
+    +'&creator=' + creator +'&creatorName=' + creatorName );
     xhr.onload = function() {
         var response = JSON.parse(this.responseText);
         console.log(response);
@@ -34,10 +38,10 @@ var appendUploadedFileToTable = function(file) {
     $('#result tr:last').after(
             "<tr><td><a href='s3/" + file.subdir + "/" + file.filename + "'>" + file.filename + "</a></td>" +
             "<td>" + file.subdir + "</td>" +
-            "<td>" + file.comments + "</td>" +
+            "<td>" + file.message + "</td>" +
             "<td>" + file.filesize + "</td>" +
             "<td>" + file.originalFilename + "</td>" +
-            "<td>" + new Date(file.creationDate).toLocaleString() + "</td>" +
+            "<td>" + new Date(file.postedTime).toLocaleString() + "</td>" +
             "<td><button class='btn btn-default btn-sm' " +
             "onClick='deleteFile(this, &quot;" + file.id + "&quot;)'>Delete</button></td></tr>");
 
@@ -52,15 +56,29 @@ var setFiles = function(element) {
     }
 };
 
-dpd.uploads.get(function(data, statusCode, headers, config) {
+//dpd.uploads.get(function(data, statusCode, headers, config) {
+//    for(var index in data) {
+//        appendUploadedFileToTable(data[index]);
+//    }
+//});
+
+dpd.posts.get(function(data, statusCode, headers, config) {
     for(var index in data) {
         appendUploadedFileToTable(data[index]);
     }
 });
 
+//var deleteFile = function(element, id) {
+//    $(element).closest('tr').remove();
+//    dpd.uploads.del(id, function(data, status) {
+//        $('.alert-success').show();
+//        $('.alert-success').append("File removed!");
+//    })
+//}
+
 var deleteFile = function(element, id) {
     $(element).closest('tr').remove();
-    dpd.uploads.del(id, function(data, status) {
+    dpd.posts.del(id, function(data, status) {
         $('.alert-success').show();
         $('.alert-success').append("File removed!");
     })

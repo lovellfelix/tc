@@ -1,21 +1,13 @@
 {
 	"type": "Collection",
 	"properties": {
-		"message": {
-			"name": "message",
-			"type": "string",
-			"typeLabel": "string",
-			"required": false,
-			"id": "message",
-			"order": 0
-		},
 		"creator": {
 			"name": "creator",
 			"type": "string",
 			"typeLabel": "string",
 			"required": false,
 			"id": "creator",
-			"order": 1
+			"order": 0
 		},
 		"creatorName": {
 			"name": "creatorName",
@@ -23,7 +15,31 @@
 			"typeLabel": "string",
 			"required": false,
 			"id": "creatorName",
+			"order": 1
+		},
+		"message": {
+			"name": "message",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "message",
 			"order": 2
+		},
+		"filename": {
+			"name": "filename",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "filename",
+			"order": 3
+		},
+		"subdir": {
+			"name": "subdir",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "subdir",
+			"order": 4
 		},
 		"mentions": {
 			"name": "mentions",
@@ -31,15 +47,31 @@
 			"typeLabel": "array",
 			"required": false,
 			"id": "mentions",
-			"order": 3
+			"order": 5
+		},
+		"fileszie": {
+			"name": "fileszie",
+			"type": "Int32",
+			"typeLabel": "Int32",
+			"required": false,
+			"id": "fileszie",
+			"order": 6
 		},
 		"postedTime": {
 			"name": "postedTime",
-			"type": "number",
-			"typeLabel": "number",
+			"type": "Double",
+			"typeLabel": "Double",
 			"required": false,
 			"id": "postedTime",
-			"order": 4
+			"order": 7
+		},
+		"mimeType": {
+			"name": "mimeType",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "mimeType",
+			"order": 8
 		}
 	}
 }
