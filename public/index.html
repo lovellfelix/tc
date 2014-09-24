@@ -20,8 +20,60 @@
                         <textarea class="input-xxlarge" placeholder="What's up?" ng-model="newPost"></textarea>
                         <div>
                           <button class="btn btn-primary" ng-click="submit(newPost)">Post</button>
+
+
+                            <div ng-app="fileUpload" ng-controller="MyCtrl">
+                                <br/>
+                                <input type="file" ng-file-select="onFileSelect($files)" multiple>
+                                <br/>
+                                <br/>
+
+                                <div ng-show="dropSupported" class="drop-box" ng-file-drop="onFileSelect($files);"
+                                     ng-file-drop-available="dropSupported=true">or drop files here
+                                </div>
+                                <div ng-show="!dropSupported">HTML5 Drop File is not supported on this browser</div>
+                                <br/>
+                                <input type="checkbox" ng-model="uploadRightAway">Upload right away
+                                <br/>
+                                <br/>
+                                Progress:
+                                <br/>
+                                <br/>
+
+                                <div ng-show="selectedFiles != null">
+                                    <div class="sel-file" ng-repeat="f in selectedFiles">
+                                        <img ng-show="dataUrls[$index]" ng-src="{{dataUrls[$index]}}">
+                                        <button class="button" ng-click="start($index)" ng-show="progress[$index] < 0">Start</button>
+				<span class="progress" ng-show="progress[$index] >= 0">
+					<div style="width:{{progress[$index]}}%">{{progress[$index]}}%</div>
+				</span>
+                                        <button class="button" ng-click="abort($index)" ng-show="hasUploader($index) && progress[$index] < 100">
+                                            Abort
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+
                         </div>
                       </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                       <ng-include src="'partials/feed.html'"></ng-include>
                   </div>
               </div>
@@ -43,6 +95,8 @@
   <script type="text/javascript" src="components/jquery/dist/jquery.js"></script>
   <script type="text/javascript" src="components/bootstrap/dist/js/bootstrap.js"></script>
   <script type="text/javascript" src="components/angular-timeago/src/timeAgo.js"></script>
+  <script src="components/ng-file-upload/angular-file-upload-shim.js"></script>
+  <script src="components/ng-file-upload/angular-file-upload.js"></script>
   <script type="text/javascript" src="/dpd.js"></script>
   <script type="text/javascript" src="/js/global.js"></script>
   <script type="text/javascript" src="/js/index.js"></script>
